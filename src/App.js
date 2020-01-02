@@ -1,7 +1,7 @@
 import React from 'react';
 import logo from './logo.svg';
 import './App.css';
-import Toggle from './ToggleRPC';
+import {Toggle, Portal, Modal} from './utils'
 // import Toggle from './ToggleHooks';
 
 function App() {
@@ -9,13 +9,14 @@ function App() {
 		<div className="App">
 			<header className="App-header">
 				<img src={logo} className="App-logo" alt="logo" />
-
 				<Toggle>
 					{({ on, toggle }) => (
-						<>
-							{on && <h1>Yo</h1>}
-							<button onClick={toggle}> Show / Hide Button</button>
-						</>
+            <>
+            <button onClick={toggle}  >Login</button>
+						<Modal on={on} toggle={toggle}>
+							<h1>BIG dog in the house se </h1>
+						</Modal>
+            </>
 					)}
 				</Toggle>
 			</header>
